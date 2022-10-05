@@ -28,7 +28,7 @@ const LocalWeather = () => {
     //1.执行useEffect,出现报错，避免报错，加一个loading
     //2.有没有改变？->没有-> 跳过useEffect
     useEffect(() => {
-        getWeatherByID('2158177').then(({ data }) => {
+        getWeatherByID('2147714').then(({ data }) => {
             setData(data);
             setLoading(false);
         })

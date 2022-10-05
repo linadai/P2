@@ -8,7 +8,7 @@ const OtherCities = () => {
 	const [data, setData] = useState();
 	const [loading, setLoading] = useState();
 	useEffect(() => {
-		getWeatherByID(['2147714', '2174003', '2063523'].join()).then(({ data }) => {
+		getWeatherByID(['2158177', '2174003', '2063523'].join()).then(({ data }) => {
 			setData(data);
 			setLoading(false);
 		})

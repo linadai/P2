@@ -1,2 +1,7 @@
 # P2
-test
+This is a personal project about the  weather app.
+Front-end use React. Back-end use nodeJS.
+
+
+
+

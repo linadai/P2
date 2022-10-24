@@ -10,7 +10,7 @@ const Layout = styled.div`
     padding: 64px 96px;
     color: white;
 `
-const LocalWeather = () => {
+const LocalWeather = ({ currentCityID }) => {
     /**bundle.js:800 Uncaught TypeError: Cannot read properties of undefined (reading 'main')
     at LocalWeather (bundle.js:800:27) 
     react 的渲染原理会导致第一次data undefined
@@ -22,17 +22,20 @@ const LocalWeather = () => {
     // const [wind, setWind] = useState();
     const [data, setData] = useState();
     const [loading, setLoading] = useState(true);
+    console.log("currentCityID-----", currentCityID);
+    // const [currentCity, setCurrentCity] = useState();
     //1.undefined
     //2.data已经有值
-    console.log(data);
+    // console.log(data);
+
     //1.执行useEffect,出现报错，避免报错，加一个loading
     //2.有没有改变？->没有-> 跳过useEffect
     useEffect(() => {
-        getWeatherByID('2147714').then(({ data }) => {
+        getWeatherByID(currentCityID).then(({ data }) => {
             setData(data);
             setLoading(false);
         })
-    }, [])
+    }, [currentCityID])
 
     if (loading) {
         return (<div>Loading...</div>)

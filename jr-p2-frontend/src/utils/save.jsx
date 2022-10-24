@@ -12,6 +12,7 @@ const Forecast = () => {
                 {
                     forecasts.map(({ day, weather, temperature }) => {
                         <DailyWeather
+                            key={day}
                             day={day}
                             weather={weather}
                             temperature={temperature} />

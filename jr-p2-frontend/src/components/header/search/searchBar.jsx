@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 const SearchBarStyle = styled.div`
         width: 150px;
-        height: 30px;
+       // height: 30px;
         background-color: pink;
         display: flex;
         justify-content: end;
@@ -49,11 +49,11 @@ const SearchBar = () => {
     return (<SearchBarStyle>
         {/*  */}
         <span className='searchBtn'>
-        <input type="text"  />
+            <input type="text" />
         </span>
-       
-       
-        
+
+
+
     </SearchBarStyle>);
 }
 

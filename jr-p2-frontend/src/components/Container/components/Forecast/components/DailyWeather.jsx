@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 const StyledWeatherIcon = styled(WeatherIcon)`
     width: 70px;
     height: 70px;
+    color: orange;
 `
 const DailyWeather = ({
     day,

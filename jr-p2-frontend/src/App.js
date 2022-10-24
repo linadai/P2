@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getWeathers } from './api/Weathers'
+import { getForecastsByID } from './api/Weathers'
 import Header from './components/header/header';
 import styled from 'styled-components';
 import Container from './components/Container/Container';
@@ -8,29 +8,22 @@ import BackgroundImage from './components/BackgroundImage';
 const Wrapper = styled(BackgroundImage)`//Wrapper继承BackgroundImage的所有style
 min-height: 100vh;
 min-width: 100vw;
-
 `
 
 function App() {
-  console.log("----App---");
-  const [data, setData] = useState('');
-  const [array, setArray] = useState([]);
+  const [currentCityID, setCurrentCityID] = useState('2147714');
+  const [forecasts, setForecasts] = useState([]);
   useEffect(() => {
-    getWeathers().then((res) => {
-      console.log("----222---", res.data)
-      setData(JSON.stringify(res.data));
-      setArray(res.data);
-      console.log("-------", array);
+    console.log("app-------", currentCityID);
+    getForecastsByID(currentCityID).then((res) => {
+      console.log("getForecasts-------", res.data);
+      setForecasts(res.data);
     })
-  }, [])
-
-  useEffect(() => {
-    console.log('array refresh', array);
-  }, [array])
+  }, [currentCityID])
   return (
     <Wrapper className="App" src="https://wallpaperaccess.com/full/2629319.png">
-      <Header></Header>
-      <Container />
+      <Header setCurrentCityID={setCurrentCityID}></Header>
+      <Container currentCity={currentCityID} forecasts={forecasts} />
     </Wrapper>
   );
 }

@@ -26,15 +26,15 @@ const VerticalDiver = styled.div`
     background-color: rgb(0, 0, 0, 0.1); 
 `
 
-const Container = () => {
+const Container = ({ currentCity, forecasts }) => {
     return (
         <ContainerStyle>
             <Content>
-                <LocalWeather />
+                <LocalWeather currentCityID={currentCity} />
                 <Layout>
                     <OtherCities />
                     <VerticalDiver />
-                    <Forecast />
+                    <Forecast forecasts={forecasts} />
                 </Layout>
             </Content>
         </ContainerStyle>

@@ -1,8 +1,10 @@
 # P2
-This is a personal project about the  weather app.
+This is a simple personal project about the weather app. You can check the different city's weather, from the dropdown list.
 
 
-<img width="653" alt="image" src="https://user-images.githubusercontent.com/78600296/193981534-13b9d279-fd1c-4f63-a3a0-aac7c7c935db.png">
+<img width="1051" alt="image" src="https://user-images.githubusercontent.com/78600296/197652059-a8b38d0d-5257-4d68-9730-73c612d947e4.png">
+
+
 
 Back-end use nodeJS.
 npm install
